@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <meta name="description" content="Notepad App">
+  <meta name="keywords" content="Notepad, Secure backup">
+  <meta name="author" content="shreekant">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <title>Notepad App | Capiot</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+
+<body ng-app="myNoteApp" ng-controller="myNoteCtrl" style="background-image: url('img/bg.gif');">
+
+<div class="container">
+    <h3 style="color: #fff;">Notepad Application</h3>  
+  <div class="row">
+    <div class="col-sm-6">
+        <textarea style="background-color:#000;color:white; width: 100%; height:425px; font-size: 16px; padding: 20px;" ng-model="message" cols="80" rows="20" Placeholder="Write your message here....">	
+		</textarea>
+
+		<p align="center">
+		<button ng-click="save()" class="btn-primary" style="height:40px; width: 80px;">Save</button>
+		<button ng-click="clear()" class="btn-primary" style="height:40px; width: 80px;">Clear</button>
+		</p>
+    </div>
+
+    <div class="col-sm-6" style="color:#fff;">
+    <h4> Currently you have only {{messages.length}} files saved in your directory</h4>
+		<ol>
+    		<li ng-repeat="x in messages" style="font-size: 17px;">{{x}}</li>
+		</ol>
+    </div>
+   </div>
+  </div>
+<script src="js/myNoteApp.js"></script>
+<script src="js/myNoteCtrl.js"></script>
+
+</body>
+</html>
